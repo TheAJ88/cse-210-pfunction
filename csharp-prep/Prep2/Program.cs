@@ -17,7 +17,7 @@ class Program
         {
             letter = "A";
         }
-        else if (g >= 80)
+        else if (g >= 80) 
         {
             letter = "B";
         }
