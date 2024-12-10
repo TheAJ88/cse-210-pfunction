@@ -19,7 +19,7 @@ class Program
    \       \ ~~~~~~   \
    ==).      \__________\
   (__)       ()__________)";
-        Console.WriteLine("Hello Develop05 World!");
+        Thread.Sleep(1000);
         int screenWidth = Console.WindowWidth;
         int stringWidth = welcomeMessage.Length;
         int spaces = (screenWidth / 2) + (stringWidth / 2);
