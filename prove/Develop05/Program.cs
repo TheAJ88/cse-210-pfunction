@@ -19,12 +19,9 @@ class Program
    \       \ ~~~~~~   \
    ==).      \__________\
   (__)       ()__________)";
-        Thread.Sleep(1000);
-        int screenWidth = Console.WindowWidth;
-        int stringWidth = welcomeMessage.Length;
-        int spaces = (screenWidth / 2) + (stringWidth / 2);
-        Console.WriteLine(welcomeMessage.PadLeft(spaces));
+        Console.WriteLine(welcomeMessage);
         Console.WriteLine(art);
+        Thread.Sleep(1500);
         int _totalPoints = 0;
         while(_mainOption!="6")
         {

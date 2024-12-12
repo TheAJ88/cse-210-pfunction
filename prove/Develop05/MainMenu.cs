@@ -14,6 +14,7 @@ class MainMenu
         4. Load Goals
         5. Record Event
         6. Quit");
+        Console.WriteLine();
         Console.Write("Select a choice from the menu: ");
         _option = Console.ReadLine();
         return _option;
@@ -25,6 +26,7 @@ class MainMenu
         1. Simple Goal
         2. Eternal Goals
         3. Checklist Goal");
+        Console.WriteLine();
         Console.Write("What type of goal would you like to create? ");
         _option = Console.ReadLine();
         return _option;

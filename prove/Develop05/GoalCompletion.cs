@@ -43,12 +43,18 @@ class GoalCompletion
                     {
                         entry.Complete();
                     }
+                    if ((entry.GetCompletion()==true)&&(entry.GetGoal()=="ChecklistGoal"))
+                    {
+                        _reward = _reward + entry.GetBonus();
+                        Console.WriteLine($"Congratulations! You have received a bonus of {entry.GetBonus} points!");
+                    }
                 }
                 else
                 {
                     Console.WriteLine("This goal is complete!");
                 }
         }
+
         else Console.WriteLine("WRONG INPUT");
     }
     public int UpdatePoints()
