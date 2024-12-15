@@ -5,7 +5,6 @@ using System.IO;
 using Microsoft.VisualBasic;
 class Program
 {
-    
     static void Main(string[] args)
     {
         string _mainOption = "0";
@@ -25,13 +24,14 @@ class Program
         int _totalPoints = 0;
         while(_mainOption!="6")
         {
+            Level level = new Level();
+            int milestoneBonus = level.MilestoneBonus(goals);
+            _totalPoints = _totalPoints + milestoneBonus;
             string _goalOption;
+            Console.WriteLine();
             Console.WriteLine($"You have {_totalPoints} points.\n");
-            if(_totalPoints==100)
-            {
-                Console.WriteLine("THE GREAT HUNDRED! CONGRATULATIONS AGAIN! Here's 25 bonus points! Go treat yourself by taking a well-deserved break!");
-                _totalPoints = _totalPoints+25;
-            }
+            int _level = level.LevelSystem(_totalPoints);
+            Console.WriteLine($"Your level is {_level}");
             MainMenu menu = new MainMenu();
             _mainOption = menu.BaseMenu();
             if(_mainOption=="1")
@@ -44,7 +44,7 @@ class Program
                     simplegoal.GoalEntrySpecific();
                     simplegoal.SetType(goalType);
                     goals.Add(simplegoal);
-                }
+                } 
                 if(_goalOption=="2")
                 {
                     string goalType = menu.TypeSet(_goalOption);
@@ -64,13 +64,15 @@ class Program
             }
             if(_mainOption=="2")
             {
+                LoadingAnimation ln = new LoadingAnimation(2);
+                Console.WriteLine();
                 DisplayGoal display = new DisplayGoal(goals);
                 display.ListDisplay();
             } 
             if(_mainOption=="3")
             {
                 SaveGoal save = new SaveGoal();
-                save.FileModder(goals);
+                save.FileModder(goals, _totalPoints);
             }
             if(_mainOption=="4")
             {
@@ -78,13 +80,13 @@ class Program
                 load.FileModder();
                 goals.Clear();
                 goals = load.GetList();
+                _totalPoints = load.GetPoints();
             }
             if(_mainOption=="5")
             {
                 GoalCompletion complete = new GoalCompletion(goals);
                 complete.Update();
                 _totalPoints = _totalPoints + complete.UpdatePoints();
-
             }
         }
     }

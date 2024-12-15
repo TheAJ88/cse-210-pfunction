@@ -46,7 +46,7 @@ class GoalCompletion
                     if ((entry.GetCompletion()==true)&&(entry.GetGoal()=="ChecklistGoal"))
                     {
                         _reward = _reward + entry.GetBonus();
-                        Console.WriteLine($"Congratulations! You have received a bonus of {entry.GetBonus} points!");
+                        Console.WriteLine($"Congratulations! You have received a bonus of {entry.GetBonus()} points!");
                     }
                 }
                 else

@@ -62,6 +62,7 @@ public class Goal
         _goalPoint = points;
     }
 
+
     public virtual string DisplayGoal()
     {
         return ($"{_goalName}~~{_goalDescription}~~{_goalPoint}");

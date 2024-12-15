@@ -3,6 +3,7 @@ using System;
 class LoadGoal
 {
     private string _fileName;
+    protected int _points;
     protected List<Goal> SetList;
     public  void FileModder()
     {
@@ -11,8 +12,11 @@ class LoadGoal
         _fileName = Console.ReadLine();
 
         string[] lines = File.ReadAllLines(_fileName);
-        foreach(string line in lines)
+        _points = int.Parse(lines[0]);
+
+        for(int i = 1; i< lines.Length; i++)
         {
+            string line = lines[i];
             string[] parts = line.Split(":");
             string goalType = parts[0];
             string goal = parts[1];
@@ -57,5 +61,8 @@ class LoadGoal
     {
         return SetList;
     }
-    
+    public int GetPoints()
+    {
+        return _points;
+    }
 }
