@@ -3,7 +3,6 @@ using System.Security.Cryptography.X509Certificates;
 
 abstract class Level
 {
-    protected string _trigger;
-    public abstract void WelcomeMessage(){}
-    public abstract void VictoryMessage(){}
+    public abstract void StartMessage();
+    public abstract void EndMessage();
 }
