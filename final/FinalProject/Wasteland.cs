@@ -3,7 +3,6 @@ using System;
 class Wasteland : Level
 {
     protected int _decider;
-    protected int _trigger;
     TypeOutMessage message = new TypeOutMessage();
     protected Character _player;
 
