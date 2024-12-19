@@ -5,7 +5,7 @@ class Character
     protected int _health;
     protected int _attack;
     protected int _defense;
-    public void Player()
+    public Character()
     {
         _health = 80;
         _attack = 12;
