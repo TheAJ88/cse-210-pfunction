@@ -22,18 +22,27 @@ class nProgram
         // a.printer();
         // SAMELINE cs = new SAMELINE();
         // cs.sameLiner();
-        string message = "This is being typed out...";
-        int typingSpeed = 50;  //milliseconds delay between each character
+        // string message = "This is being typed out...";
+        // int typingSpeed = 50;  //milliseconds delay between each character
 
-        TypeOutMessage(message, typingSpeed);
-        static void TypeOutMessage(string message, int delay)
+        // TypeOutMessage(message, typingSpeed);
+        // static void TypeOutMessage(string message, int delay)
+        // {
+        // foreach (char c in message)
+        // {
+        //     Console.Write(c);
+        //     Thread.Sleep(delay);
+        // }
+        // Console.WriteLine(); // Move to the next line after the message is fully typed
+        // }
+        int s = 5;
+        while(s>0)
         {
-        foreach (char c in message)
-        {
-            Console.Write(c);
-            Thread.Sleep(delay);
-        }
-        Console.WriteLine(); // Move to the next line after the message is fully typed
+            Console.WriteLine("HELLO");
+            Console.ReadLine();
+            Console.Clear();
+            Console.WriteLine("Hello");
+            s--;
         }
 
     }

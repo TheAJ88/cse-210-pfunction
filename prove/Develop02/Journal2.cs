@@ -26,15 +26,18 @@ public class Journal2
 
     public void Savefile(string fileName)
     {
-        // if (File.Exists(fileName))
-        // {
-        //     using (StreamWriter sw = File.AppendText(fileName))
-        //     {
-        //         foreach (Entry2 entry in entries)
-        //         sw.WriteLine($"{entry._date}~~{entry._prompt}~~{entry._entryText}");
-        //     }
-        // }
-        // else
+        if (File.Exists(fileName))
+        {
+            using (StreamWriter sw = File.AppendText(fileName))
+            {
+                foreach (Entry2 entry in entries)
+                {
+                    sw.WriteLine($"{entry._date}~~{entry._prompt}~~{entry._entryText}");
+                }
+                
+            }
+        }
+        else
         {
             using (StreamWriter outputFile = new StreamWriter(fileName))
             {

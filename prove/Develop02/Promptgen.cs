@@ -17,7 +17,6 @@ public class Promptgen
         _entryPrompt.Add("What felt like it was missing today?");
         _entryPrompt.Add("Did I manage to improve myself today?");
     }
-
     public string Prompt()
     {
         Random randomnumgenerator = new Random();
